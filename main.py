@@ -3,6 +3,7 @@ def main():
     text = get_book_text(book_path)
     #print(text)
     print(word_counter(text))
+    letter_counter(text)
 def get_book_text(path):
     with open(path) as f:
         return f.read()
@@ -10,4 +11,14 @@ def get_book_text(path):
 def word_counter(text):
     return len(text.split())
     
+def letter_counter(text):
+    letters = {}
+    lower_string = text.lower()
+    for letter in lower_string:
+        if letter in letters:
+            letters[letter] += 1
+        else:
+            letters[letter] = 1
+    print(letters)
+    pass
 main()

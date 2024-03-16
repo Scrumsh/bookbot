@@ -13,12 +13,13 @@ def word_counter(text):
     
 def letter_counter(text):
     letters = {}
-    lower_string = text.lower()
+#    lower_string = text.lower()
     for letter in lower_string:
-        if letter in letters:
-            letters[letter] += 1
+        char = letter.lower()
+        if char in letters:
+            letters[char] += 1
         else:
-            letters[letter] = 1
+            letters[char] = 1
     print(letters)
     pass
 main()
